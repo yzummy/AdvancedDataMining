@@ -7,12 +7,11 @@
 # d = defaultdict(list)
 # for k, v in s:
 #     d[k].append(v)
-#
 # sorted(d.items())
 
 import pickle
 def load_obj(name ):
     with open(name + '.pkl', 'rb') as f:
         return pickle.load(f)
-graph = load_obj("graph_500m")
+graph = load_obj("graph_750m")
 print(graph)

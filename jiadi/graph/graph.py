@@ -38,6 +38,8 @@ with open("newhouse_basic_formated.txt", 'r', encoding='utf-8') as f:
         line = f.readline()
         
 graph = defaultdict(list)
+for i in range(coordinates.__len__()):
+    graph[i].append(i)
 for i in range(coordinates.__len__() - 1):
     print(i)
     for j in range(i + 1, coordinates.__len__()):
