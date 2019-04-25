@@ -24,8 +24,8 @@ flags = tf.app.flags
 FLAGS = flags.FLAGS
 flags.DEFINE_float('learning_rate', 0.01, 'Initial learning rate.')
 flags.DEFINE_integer('epochs', 500, 'Number of epochs to train.')
-flags.DEFINE_integer('hidden1', 16, 'Number of units in hidden layer 1.')
-flags.DEFINE_integer('hidden2', 8, 'Number of units in hidden layer 2.')
+flags.DEFINE_integer('hidden1', 40, 'Number of units in hidden layer 1.')
+flags.DEFINE_integer('hidden2', 20, 'Number of units in hidden layer 2.')
 flags.DEFINE_float('weight_decay', 0., 'Weight for L2 loss on embedding matrix.')
 flags.DEFINE_float('dropout', 0., 'Dropout rate (1 - keep probability).')
 
@@ -164,7 +164,7 @@ for epoch in range(FLAGS.epochs):
 
 print("Optimization Finished!")
 emb = sess.run(model.embeddings, feed_dict=feed_dict)
-np.save("embedding250m.npy", emb)
+np.save("20Dembedding750m.npy", emb)
 roc_score, ap_score = get_roc_score(test_edges, test_edges_false)
 print('Test ROC score: ' + str(roc_score))
 print('Test AP score: ' + str(ap_score))
